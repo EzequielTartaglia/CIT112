@@ -1,8 +1,10 @@
 #!/bin/bash
 
 
-# vi script1.sh
-# i to edit
+# nano script1.sh
+# Ctrl + 0 
+# chmod 777 script1.sh
+# bash ./script1.sh
 
 #
 # Using vi, create a bash script called script1.sh that displays the following two lines.

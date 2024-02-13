@@ -1,8 +1,10 @@
 #!/bin/bash
 
 
-# vi script2.sh
-# i to edit
+# nano script2.sh
+# Ctrl + 0 
+# chmod 777 script2.sh
+# bash ./script2.sh
 
 #
 # You will create a bash script which performs the following tasks:

@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# vi script3.sh
-# i to edit
+# nano script3.sh
+# Ctrl + 0 
+# chmod 777 script3.sh
+# bash ./script3.sh
 
 
 #
