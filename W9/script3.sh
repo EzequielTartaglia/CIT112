@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# vi script3.sh
+# i to edit
+
+
 #
 # You will create a bash script which performs the following tasks:
 # 
