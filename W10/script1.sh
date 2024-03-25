@@ -26,22 +26,21 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-# Store the provided month and day arguments
+# Assign variables to month and day
 month=$1
 day=$2
 
-# Define arrays for odd and even months
+# Define months between odd and even months
 odd_months=("Jan" "Mar" "May" "Jul" "Sep" "Nov")
 even_months=("Feb" "Apr" "Jun" "Aug" "Oct" "Dec")
 
-# Check if the provided month is odd or even
 if [[ " ${odd_months[@]} " =~ " $month " ]]; then
     month_type="odd"
 else
     month_type="even"
 fi
 
-# Check if the provided day is odd or even
+# Conditional to see if the month is odd or even
 if (( day % 2 == 0 )); then
     day_type="even"
 else
