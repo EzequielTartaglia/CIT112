@@ -26,6 +26,7 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
+
 # Assign variables to month and day
 month=$1
 day=$2
