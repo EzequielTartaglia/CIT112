@@ -46,29 +46,30 @@ fi
 directory=$1
 file=$2
 
-# Part 1: Check if the specified directory exists
+# Check if the specified directory exists
 if [ ! -d "$directory" ]; then
     read -p "$directory directory does not exist. Do you want to create it (Y/N)? " choice
-    if [[ $choice =~ ^[Yy]$ ]]; then
-        mkdir -p "$directory"
-        echo "Creating $directory directory."
-    else
+    if [ "$choice" != "Y" ] && [ "$choice" != "y" ]; then
+        echo "Exiting script."
         exit 0
     fi
+    mkdir -p "$directory"
+    echo "Creating $directory directory."
 fi
 
-# Part 2: Check if the specified file exists in the specified directory
+# Check if the specified file exists in the specified directory
 if [ ! -f "$directory/$file" ]; then
     read -p "$file file does not exist in $directory directory. Do you want to create it (Y/N)? " choice
-    if [[ $choice =~ ^[Yy]$ ]]; then
-        touch "$directory/$file"
-        echo "Creating $file file in $directory directory."
-    else
+    if [ "$choice" != "Y" ] && [ "$choice" != "y" ]; then
         ls -l "$directory"
+        echo "Exiting script."
         exit 0
     fi
+    touch "$directory/$file"
+    echo "Creating $file file in $directory directory."
 fi
 
 # Print the long listing of the files in the specified directory
-echo "Here is the list of files in $directory directory:"
 ls -l "$directory"
+
+
