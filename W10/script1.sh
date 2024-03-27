@@ -31,15 +31,15 @@ fi
 month=$1
 day=$2
 
-# Define months between odd and even months
-odd_months=("Jan" "Mar" "May" "Jul" "Sep" "Nov")
-even_months=("Feb" "Apr" "Jun" "Aug" "Oct" "Dec")
-
-if [[ " ${odd_months[@]} " =~ " $month " ]]; then
-    month_type="odd"
-else
-    month_type="even"
-fi
+# Determine month type (odd or even)
+case $month in
+    Jan | Mar | May | Jul | Sep | Nov)
+        month_type="odd"
+        ;;
+    *)
+        month_type="even"
+        ;;
+esac
 
 # Conditional to see if the month is odd or even
 if (( day % 2 == 0 )); then
