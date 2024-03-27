@@ -106,12 +106,11 @@
 while true; do
     echo "1. Display the disk usage"
     echo "2. Display the memory usage"
-    echo "3. Print the content of $1 file"
+    echo "3. Print the content of the specified file"
     echo "4. Exit"
-    
-    read -p "Choose your option [1-4]: " option
-    
-    case $option in
+    read -p "Choose your option [1-4]: " choice
+
+    case $choice in
         1)
             df -h
             ;;
@@ -119,18 +118,17 @@ while true; do
             free -h
             ;;
         3)
-            echo ""
-            echo "Content of $1 file:"
-            while IFS= read -r line; do
+            read -p "Enter the file name: " filename
+            while read -r line; do
                 echo "$line"
-            done < "$1"
+            done < "$filename"
             ;;
         4)
-            echo "Bye!"
+            echo "Exiting script."
             exit 0
             ;;
         *)
-            echo "Invalid option. Please choose again."
+            echo "Invalid option. Please choose a valid option."
             ;;
     esac
 done
